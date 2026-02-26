@@ -1,9 +1,10 @@
 from main import app
 from flask import render_template
+from markupsafe import escape
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    return render_template('home.html')
 
 @app.route('/camisas')
 def camisas():
@@ -33,8 +34,8 @@ def ola(nome):
 
 @app.route('/cadastro', methods = ['GET', 'POST'])
 def cadastro():
-    return render_template('cadastro.html')
+    return render_template('usuario/cadastro.html')
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('usuario/login.html')
