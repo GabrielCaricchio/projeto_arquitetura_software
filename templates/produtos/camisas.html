@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camisas</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/camisas')}}">
+  <link rel="icon" type="image" href="{{url_for('static', filename='images/favicon1.webp')}}">
+</head>
+<body>
+
+  <h1>Temos as camisas mais fashions do mercado</h1>
+  <br>
+  <div class="container">
+    <img src="{{url_for('static', filename='images/modelos-camisas.png')}}" alt="modelos com calças chiques">
+  </div>
+  <br>
+  <h3>Olhe nossos modelos de melhor qualidade da marca: {{ marca | title }}; Eles estão em oferta, mas é apenas hoje</h3>
+
+  <!-- filtros:
+   title                 (primeira letra de cada palavra maiuscula) ,
+   upper                 (tudo maiusculo),
+   lower                 (tudo minusculo),
+   capitalize            (primeira letra maiuscula)
+   lenght                (mostra a quantidade de caracteres)
+   default('sem nome')   (caso não consiga achar o valor da variavel/caso a variavel não exista, ele apresenta um valor padrão)
+
+   filtros numéricos:
+
+   round(2)              (entre parenteses é a quantidade de casas decimais que você quer)
+   int                   (transforma o valor em um numero inteiro)
+   float                 (converte o valor para um float)
+
+  -->
+
+  <h5>Produtos:</h5>
+  <p>Tipo: {{ tipos_camisas_html.tipo }}</p>
+  <p>Preço: {{ tipos_camisas_html.preço }}</p>
+  <p>Descrição: {{ tipos_camisas_html.descrição | capitalize }}</p>
+
+</body>
+</html>
